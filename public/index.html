@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NGT Institutional Briefing</title>
+  <!-- Non-blocking Google Fonts: renders immediately with system fallback on offline/restricted networks -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="modulepreload" href="vendor/three.module.js">
+  <link rel="modulepreload" href="js/three/kit.js">
+  <link rel="modulepreload" href="js/three/opening.js">
+</head>
+<body data-mode="presenting">
+  <div id="stage">
+    <div id="views"></div>
+
+    <header id="topbar">
+      <div id="brand"><img src="assets/logos/ngt.jpeg" alt=""><b>NGT</b><span>Next Generation<br>Technologies</span></div>
+      <nav id="crumbs" aria-label="Breadcrumb"></nav>
+      <div class="top-right">
+        <img id="ndma-mark" src="assets/logos/ndma.png" alt="NDMA">
+        <span id="mode"><i></i><span id="mode-label">Presenting</span></span>
+        <button id="fullscreen" class="icon" aria-label="Toggle fullscreen (F)">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <footer id="controls">
+      <div class="transport">
+        <button id="prev" class="icon" aria-label="Previous step (←)">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+        </button>
+        <button id="play" class="play" aria-label="Pause">
+          <svg class="i-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
+          <span id="play-label">Pause</span>
+        </button>
+        <button id="next" class="icon" aria-label="Next step (→)">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div id="progress" role="group" aria-label="Presentation chapters"></div>
+      <div class="meta">
+        <span id="step-label"></span>
+        <label class="speed">Speed <select id="speed" aria-label="Presentation speed"></select></label>
+      </div>
+    </footer>
+  </div>
+  <div id="live" hidden>
+    <header>
+      <button id="live-close" class="link">← Back to briefing</button>
+      <span class="live-tag"><i></i>Live</span>
+      <span id="live-title"></span>
+      <button id="live-reload" class="link">Reload</button>
+    </header>
+    <div id="live-frame"></div>
+  </div>
+  <script src="vendor/gsap.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
